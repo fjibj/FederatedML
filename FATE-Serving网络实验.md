@@ -53,17 +53,25 @@ servings:
 
 
 133 host
+
 cd fate_flow
+
 vim examples/upload_host2.json
+
 python fate_flow_client.py -f upload -c examples/upload_host2.json
 
 135 guest
+
 cd fate_flow
+
 vim examples/upload_guest2.json
+
 python fate_flow_client.py -f upload -c examples/upload_guest2.json
 
 vim examples/test_hetero_lr_job_dsl2.json
+
 vim examples/test_hetero_lr_job_conf2.json
+
    .......
    "job_parameters": {
         "work_mode": 1,
@@ -171,7 +179,9 @@ Date: Thu, 07 Jan 2021 09:08:53 GMT
 ## 试验中转serving-proxy
 
 在134上搭建serving-proxy,
+
 配置conf/application.properties
+
 # zk router
 useZkRouter=false
 #zk.url=localhost:2181,localhost:2182,localhost:2183
@@ -311,9 +321,13 @@ t-7777#host-8888#model","modelVersion":"202101071500593883062","timestamp":16100
 # 验证7777到9999（即135到157）
 
 157上：
+
 docker exec -it confs-9999_python_1 bash
+
 cd fate_flow/
+
 vi examples/upload_host3.json
+
 {
  
   	"file": "examples/data/breast_hetero_host.csv",
@@ -330,11 +344,14 @@ vi examples/upload_host3.json
 }
 }
 ·      
+
 python fate_flow_client.py -f upload -c examples/upload_host3.json
 
 
 135上：
+
 cd fate_flow/
+
 vi examples/test_hetero_lr_job_conf3.json
 
 {
@@ -481,7 +498,9 @@ Date: Thu, 07 Jan 2021 10:29:48 GMT
 # 继续试验经过两次中转  7777到9999 （135->134->43->157，134是133和135对外的serving-proxy，43是157和156对外的serving-proxy)
 
 134上：
+
 修改fate-serving-proxy/conf/route_table.json:
+
 {
   "route_table": {
     "default": {
@@ -515,10 +534,12 @@ Date: Thu, 07 Jan 2021 10:29:48 GMT
 }
 
 43上：
+
 根据156上docker-compose安装方式生成的/usr/local/KubeFATE/docker-deploy/outputs/default-serving-proxy/serving-10000.tar展开修改，
 仅保留serving-proxy部分（即去除serving-server、redis），后打包生成default-serving-proxy.tar，传到43的/mnt/disk01/fangjin/fate下，解压
 
 修改default-serving-proxy/confs/serving-proxy/conf/route_table.json:
+
 {
     "route_table": {
         "10000": {
@@ -552,10 +573,13 @@ Date: Thu, 07 Jan 2021 10:29:48 GMT
 }
 
 docker-compose down
+
 docker-compose up -d
 
 157上：
+
 修改/data/projects/fate/serving-9999/confs/serving-proxy/conf/route_table.json:
+
 {
     "route_table": {
         "10000": {
@@ -595,6 +619,7 @@ docker-compose up -d
 }
 
 在线测试：
+
 curl -X POST -H 'Content-Type: application/json' -i 'http://172.32.150.135:8059/federation/v1/inference' --data '{
   "head": {
     "serviceId": "test9999"
