@@ -49,8 +49,9 @@ servings:
 
 # 以下参考
  https://github.com/FederatedAI/KubeFATE/blob/master/docker-deploy/README_zh.md#验证serving-service功能
-
-
+ 
+ 
+ <img src="FATE网络拓扑.jpg">
 
 133 host
 
