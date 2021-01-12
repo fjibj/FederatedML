@@ -1,4 +1,5 @@
 2021.1.12 添加了两边都有中转serving-proxy的情况验证
+
 2021.1.7 今日验证了serving-proxy可以起到类似训练时exchange的作用。
 
 # FATE-SERVING-2.0
