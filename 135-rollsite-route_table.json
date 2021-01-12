@@ -1,0 +1,33 @@
+{
+  "route_table":
+  {
+    "default":
+    {
+      "default": [
+        {
+            "ip": "172.32.150.134",
+            "port": 9370
+        }
+      ]
+    },
+    "7777":
+    {
+      "default":[
+        {
+          "port": 9370,
+          "ip": "172.32.150.135"
+        }
+      ],
+      "fateflow":[
+        {
+          "port": 9360,
+          "ip": "172.32.150.135"
+        }
+      ]
+    }
+  },
+  "permission":
+  {
+    "default_allow": true
+  }
+}

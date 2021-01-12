@@ -1,0 +1,31 @@
+{
+    "route_table": {
+        "10000": {
+            "default": [
+                {
+                    "ip": "172.32.150.156",
+                    "port": 8869
+                }
+            ]
+        },
+        "9999": {
+            "default": [
+                {
+                    "ip": "172.32.150.157",
+                    "port": 8869
+                }
+            ]
+        },
+        "default": {
+            "default": [
+                {
+                    "ip": "172.32.150.134",
+                    "port": 8869
+                }
+            ]
+        }
+    },
+    "permission": {
+        "default_allow": true
+    }
+}

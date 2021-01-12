@@ -1,0 +1,31 @@
+{
+  "route_table": {
+    "default": {
+      "default": [
+        {
+          "ip": "172.32.150.43",
+          "port": 8869
+        }
+      ]
+    },
+    "8888": {
+      "default": [
+        {
+          "ip": "172.32.150.133",
+          "port": 8869
+        }
+      ]
+    },
+    "7777": {
+      "default": [
+        {
+          "ip": "172.32.150.135",
+          "port": 8869
+        }
+      ]
+    }
+  },
+  "permission": {
+    "default_allow": true
+  }
+}
