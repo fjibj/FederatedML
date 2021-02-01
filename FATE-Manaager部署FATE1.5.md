@@ -1,6 +1,6 @@
 FATE-Manaager部署FATE1.5
 
-#安装ingress controlller
+# 安装ingress controlller
  
 
 参考: NGINX Docs | Installation with Manifests
@@ -42,9 +42,9 @@ http://kubefate.net:17657/
 
 
 
-#fate-manager自动部署站点
+# fate-manager自动部署站点
 
-1. 加载已手工安装之1.5.0版本的FATE cluster
+# 1. 加载已手工安装之1.5.0版本的FATE cluster
 
 自动部署界面选择connect链接，输入http://172.32.150.133:35050（参看fate-manager/conf/app.ini)
 
@@ -81,7 +81,7 @@ fate_version: 1.5.0
 component_version: {"clustermanager":"1.5.0-release","fateboard":"1.5.0-release","fateflow":"1.5.0-release","mysql":"8","nodemanager":"1.5.0-release","rollsite":"1.5.0-release"}
 
 
-2. 部署新站点FATE1.4.4
+# 2. 部署新站点FATE1.4.4
 
 wget https://github.com/FederatedAI/KubeFATE/releases/download/v1.4.4/fate-v1.4.4.tgz
 
@@ -112,7 +112,7 @@ Start 启动Auto-test（跳过）
 Finish
 
 
-#在线升级FATE1.5，点击Upgrade FATE，
+# 在线升级FATE1.5，点击Upgrade FATE，
 
 
 手工将t_fate_deploy_site表对应记录的status字段值改为2. （因为前面手工跳过了Auto-Test）
@@ -180,9 +180,10 @@ type ClusterConfig150 struct {
         	    } 
         }
 
-#直接安装1.5FATE
+# 直接安装1.5FATE
 
 修改fate-manager/src/services/job_service/job_service.go：
+
 72行		result, err := http.GET(http.Url(kubenetesUrl+"/v1/job/"+deployJobList[i].JobId), nil, head)
               if err != nil || result == nil {
                       continue
