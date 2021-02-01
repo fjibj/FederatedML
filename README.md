@@ -15,3 +15,7 @@
 服务架构
 
 <img src="服务架构.png">
+
+# 用FATE-Manager自动部署FATE1.5
+
+<img src="auto-deploy-fate-1.5.png">
