@@ -16,6 +16,6 @@
 
 <img src="服务架构.png">
 
-# 用FATE-Manager自动部署FATE1.5
+# 用FATE-Manager自动部署FATE1.5 （2021/2/1）
 
 <img src="auto-deploy-fate-1.5.png">
